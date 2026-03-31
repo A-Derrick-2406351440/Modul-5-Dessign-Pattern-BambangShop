@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement delete function in Subscriber repository.`
     -   [v] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [v] Commit: `Create Notification service struct skeleton.`
+    -   [v] Commit: `Implement subscribe function in Notification service.`
+    -   [v] Commit: `Implement subscribe function in Notification controller.`
+    -   [v] Commit: `Implement unsubscribe function in Notification service.`
+    -   [v] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [v] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. DashMap adalah struktur data thread-safe yang memang dirancang untuk aplikasi multithreading. Dalam BambangShop, daftar subscriber diakses oleh banyak thread, sehingga DashMap sangat relevan. Sementara itu, Singleton hanya memastikan ada satu instance global dari daftar subscriber. Jadi, Singleton bisa dipakai untuk menjamin satu instance, tetapi tetap membutuhkan DashMap agar akses paralel tetap aman.
 
 #### Reflection Publisher-2
+1. Memisahkan Service dan Repository dari Model merupakan penerapan prinsip Single Responsibility Principle (SRP). Service bertugas mengolah dan menjalankan logika bisnis, sedangkan Repository berfungsi sebagai lapisan akses data ke penyimpanan seperti database. Dengan pemisahan ini, setiap komponen memiliki tanggung jawab yang spesifik, sehingga perubahan pada satu bagian tidak mengganggu bagian lain. Hasilnya, kode lebih terstruktur, mudah dipahami, dan lebih mudah dipelihara.
+
+2. Jika hanya mengandalkan Model tanpa lapisan lain, maka akan terjadi coupling yang tinggi antar komponen. Setiap perubahan pada satu Model dapat memengaruhi Model lain, sehingga memaksa kita melakukan banyak modifikasi di berbagai bagian kode. Interaksi antar Program, Subscriber, dan Notification akan menjadi kompleks dan sulit dikelola, sehingga menambah beban pemeliharaan.
+
+3. Postman sangat membantu dalam melakukan pengujian endpoint aplikasi. Dengan Postman, kita bisa mengirim berbagai jenis HTTP method (GET, POST, PUT, DELETE), menambahkan credentials, mengisi form, dan melihat langsung response dari server. Fitur-fitur seperti collection, environment variables, dan automated testing membuat proses uji coba lebih sistematis. Hal ini sangat berguna untuk memastikan perilaku aplikasi sesuai harapan.
 
 #### Reflection Publisher-3
